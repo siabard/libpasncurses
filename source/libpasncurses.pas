@@ -46,13 +46,19 @@ uses
   {$IFDEF LINUX}
     const libNCurses = 'libncurses.so';
   {$ENDIF}
+  {$IFDEF DARWIN}
+      const libNCurses = 'libncurses.dylib';
+  {$ENDIF}
 {$ELSE}
   {$IFDEF MSWINDOWS OR defined(MSWINDOWS)}
     const libNCurses = 'libncursesw6.dll';
   {$ENDIF}
   {$IFDEF LINUX}
     const libNCurses = 'libncurses.so';
-  {$ENDIF}  
+  {$ENDIF}
+  {$IFDEF DARWIN}
+      const libNCurses = 'libncurses.dylib';
+  {$ENDIF}
 {$ENDIF}
 
 const
